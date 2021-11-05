@@ -34,7 +34,7 @@ class Star
      fill(255);
     if (numOfPlanetsDestroyed>50){
       mySize+=1;
-      myColor = color(192,0,0);
+      myColor = color(192,90,0);
       text("LOOK WHAT YOU HAVE DONE!, DONT YOU SEE WHAT YOU'VE DONE TO OUR UNIVERSE?", 250,500);
     }
   }
@@ -44,6 +44,9 @@ Star [] bob;
 int  numOfPlanetsDestroyed = 0;
 void mousePressed(){
   numOfPlanetsDestroyed-=1;
+  if (numOfPlanetsDestroyed<0){
+    numOfPlanetsDestroyed+=5;
+  }
 }
 void setup() {
   size(1000, 1000);
@@ -114,4 +117,3 @@ class Planet extends Star {
    
   }
 }
-
